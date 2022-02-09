@@ -6,7 +6,7 @@ import { VideoDetail } from './VideoDetail';
 
 class App extends Component {
   state = { videos: [], selectedVideo: null };
-
+  // default search when the component first is rendered to the screen
   componentDidMount() {
     this.onTermSubmit('car');
   }
@@ -17,7 +17,8 @@ class App extends Component {
         q: term,
       },
     });
-
+    console.log(response);
+    // updade the app
     this.setState({
       videos: response.data.items,
       selectedVideo: response.data.items[0],
